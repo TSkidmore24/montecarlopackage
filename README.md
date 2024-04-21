@@ -5,7 +5,9 @@ montecarlo
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/branch/main/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/branch/main)
 
 
-Ising ensemble
+See the documentation below!
+
+[![Documentation Status](https://montecarlopackage-skidmore2024.readthedocs.io/en/latest/)]
 
 ### Copyright
 
