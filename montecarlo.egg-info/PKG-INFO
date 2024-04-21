@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: montecarlo
+Version: 0.0.0+0.g3f8b856.dirty
+Summary: Ising ensemble
+Author-email: Tommy Skidmore <skidmore2024@vt.edu>
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: test
+Requires-Dist: pytest>=6.1.2; extra == "test"
+Requires-Dist: pytest-runner; extra == "test"
+
+montecarlo
+==============================
+[//]: # (Badges)
+[![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/branch/main/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/branch/main)
+
+
+Ising ensemble
+
+### Copyright
+
+Copyright (c) 2024, Tommy Skidmore
+
+
+#### Acknowledgements
+ 
+Project based on the 
+[Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version 1.1.
