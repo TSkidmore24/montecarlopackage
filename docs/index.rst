@@ -14,7 +14,6 @@ Welcome to montecarlo's documentation!
    api
 
 
-
 Indices and tables
 ==================
 

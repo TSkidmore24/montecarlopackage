@@ -1,8 +1,7 @@
 """Ising ensemble"""
 
-# Add imports here
 from .BitString import BitString
 from .IsingHamiltonian import IsingHamiltonian
 
 
-from ._version import __version__
+#from ._version import __version__
