@@ -3,11 +3,14 @@ montecarlo
 [//]: # (Badges)
 [![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/actions?query=workflow%3ACI)
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/branch/main/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/branch/main)
+[![Documentation Status](https://readthedocs.org/projects/montecarlopackage-skidmore2024/badge/?version=latest)](https://montecarlopackage-skidmore2024.readthedocs.io/en/latest/?badge=latest)
+   
 
+See the documentation above! Use the following command to install the package into local enviroment, assuming you 
+are in the root directory of the package:
 
-See the documentation below!
+pip install .
 
-[![Documentation Status](https://montecarlopackage-skidmore2024.readthedocs.io/en/latest/)]
 
 ### Copyright
 
