@@ -1,6 +1,7 @@
 """
 MonteCarlo
 Introduction to the Monte Carlo method
+from https://github.com/nmayhall-vt/MonteCarlo/blob/main/setup.py
 """
 import sys
 from setuptools import setup, find_packages
@@ -9,6 +10,9 @@ from setuptools import setup, find_packages
 # Read in requirements.txt
 requirements = open('./docs/requirements.txt').readlines()
 requirements = [r.strip() for r in requirements]
+
+# from https://github.com/pytest-dev/pytest-runner#conditional-requirement
+needs_pytest = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
 pytest_runner = ['pytest-runner'] if needs_pytest else []
 
 setup(
