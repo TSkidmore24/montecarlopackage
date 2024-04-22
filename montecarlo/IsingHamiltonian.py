@@ -1,5 +1,5 @@
 import numpy as np
-from .BitString import BitString
+import montecarlo
 
 class IsingHamiltonian:
     """Class for an Ising Hamiltonian of arbitrary dimensionality
@@ -130,7 +130,7 @@ class IsingHamiltonian:
         EE = 0.0
         MM = 0.0
 
-        conf = BitString(self.N)
+        conf = montecarlo.BitString(self.N)
 
         for i in range(2 ** conf.N):
             conf.set_int_config(i)
