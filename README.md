@@ -9,7 +9,7 @@ montecarlo
 See the documentation above! Use the following command to install the package into local enviroment, assuming you 
 are in the root directory of the package:
 
-pip install .
+`pip install .`
 
 
 ### Copyright
