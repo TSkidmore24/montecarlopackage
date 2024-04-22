@@ -48,7 +48,7 @@ class BitString:
             decimal_number += self.config[length - i - 1] * (2 ** i)
         return decimal_number
 
-    def set_config(self, s:list[int]):
+    def set_config(self, s:list):
         try:
             self.config = np.array(s)
         except Exception as e:
