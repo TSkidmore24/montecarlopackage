@@ -9,6 +9,7 @@ from setuptools import setup, find_packages
 # Read in requirements.txt
 requirements = open('./docs/requirements.txt').readlines()
 requirements = [r.strip() for r in requirements]
+pytest_runner = ['pytest-runner'] if needs_pytest else []
 
 setup(
     name='montecarlopackage',
