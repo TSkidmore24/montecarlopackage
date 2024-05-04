@@ -13,3 +13,4 @@ import montecarlo
 def test_montecarlo_imported():
     """Sample test, will always pass so long as import statement worked."""
     assert "montecarlo" in sys.modules
+    assert "cheese" in sys.modules
