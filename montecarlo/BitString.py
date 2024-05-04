@@ -12,6 +12,9 @@ class BitString:
         return np.array2string(self.config)
 
     def __eq__(self, other): 
+        #check if numpy arrays are different sizes
+        if self.config.shape != other.config.shape:
+            return False
         #if every element between the two arrays is the same at all indexes, they are the same
         return (self.config == other.config).all()
     
@@ -33,12 +36,16 @@ class BitString:
         return count
     
     def flip_site(self,i):
+        #throw if index does not lie within dimensions of array
+        if not 0 <= i < self.config.shape[0]:
+            raise IndexError(f"Error: Index {i} exceeds the dimension of the bitstring of length: {self.config.shape}")
         current_bit = self.config[i]
         if current_bit == 0:
             self.config[i] = 1
         elif current_bit == 1:
             self.config[i] = 0
         else:
+            #this will throw if someone the bitsring does not contain a 0 or 1
             raise ValueError(f"Error: Bit is not a 1 or 0. At index {i}, the value is {self.config[i]}")
  
     def int(self):
