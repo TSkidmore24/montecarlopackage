@@ -56,6 +56,11 @@ def test_bitstring_int_on_off_flip():
         my_bs.flip_site(-1)
         my_bs.flip_site(-17)
         my_bs.flip_site(14)
+        #too large of array to map to bs dimensions
+        my_bs.set_config([0,1,1,0,0,1,0,0,1,0,1,0,1])
+        #right dimension, incorrect value 
+        my_bs.set_config([0,2,1,0,0,1,0,0,1,0,1,0])
+        my_bs.set_config([0,0,1,0,-1,1,0,0,1,0,1,0])
     #forcibly change bitstring to include a value not 0 or 1
     my_bs.config[0] = 2
     with pytest.raises(ValueError):
@@ -64,3 +69,29 @@ def test_bitstring_int_on_off_flip():
     #lose a 1 because forced a change from 1 to 2 at first index (0)
     assert my_bs.on() == 5
     assert my_bs.off() == 7
+
+    my_bs.flip_site(2)
+    assert my_bs.on() == 4
+    assert my_bs.off() == 8
+
+def test_bitstring_int_config_repr():
+    my_bs = montecarlo.BitString(4)
+    my_bs.set_int_config(8)
+    assert my_bs.int() == 8
+
+    my_bs.set_int_config(1)
+    assert my_bs.int() == 1
+
+    #throw error if dimensions of binary representation of decimal number exceed dimensions of bitstring
+    with pytest.raises(ValueError):
+        my_bs.set_int_config(25)
+
+    #show that bitstring is unmodified after error
+    assert my_bs.int() == 1
+
+    my_bs.set_int_config(0)
+    my_bs2 = montecarlo.BitString(4)
+    my_bs2.set_int_config(0)
+    assert my_bs == my_bs2
+
+    assert my_bs.__repr__() == '[0 0 0 0]'

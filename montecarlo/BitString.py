@@ -57,7 +57,13 @@ class BitString:
 
     def set_config(self, s:list):
         try:
-            self.config = np.array(s)
+            temp = np.array(s)
+            for index in temp:
+                #check if there are any values not 0 or 1
+                if index != 0 and index != 1:
+                    raise ValueError(f"Error: {index} must be 0 or 1.")
+
+            self.config = temp
         except Exception as e:
             raise ValueError(f"Error: set_config failed {e}")
         
@@ -71,8 +77,10 @@ class BitString:
         if not binary_representation:
             binary_representation = '0'
 
+        #check if the dimensions of the bitstring can hold the binary_representation, otherwise throw error
+        if self.N < binary_representation.__len__():
+            raise ValueError(f"Error: dimension does not match {self.N} and {binary_representation.__len__()}.")
         #convert string to array
-
         #in order to add padding zeroes, create the correct dimension array of all zeroes
         temp = np.zeros(self.N, dtype=int)
         #index should start with the correct amount of padding zeroes in the front to ensure dimensions match
