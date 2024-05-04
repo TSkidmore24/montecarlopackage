@@ -100,34 +100,28 @@ def test_bitstring_int_config_repr():
     assert my_bs == my_bs2
 
     assert my_bs.__repr__() == '[0 0 0 0]'
-'''
+
 def test_Ising():
     N = 6
     Jval = 2.0
+    #create test graph
     G = nx.Graph()
     G.add_nodes_from([i for i in range(N)])
     G.add_edges_from([(i,(i+1)% G.number_of_nodes() ) for i in range(N)])
     for e in G.edges:
         G.edges[e]['weight'] = Jval
 
-    conf = montecarlo.BitString(N)
-    #12 possible bitstring configurations for 3 bit
-    #assert 2*len(conf) == 12
-
-
-    ham = montecarlo.IsingHamiltonian(G)
+    J = [[] for i in G.nodes()]
+    for e in G.edges:
+        J[e[0]].append((e[1], G.edges[e]['weight']))
+        J[e[1]].append((e[0], G.edges[e]['weight']))
+    
+    ham = montecarlo.IsingHamiltonian(J, numpy.zeros(len(G.nodes())))
 
     # Compute the average values for Temperature = 1
     E, M, HC, MS = ham.compute_average_values(1)
-
-
-    print(" E  = %12.8f" %E)
-    print(" M  = %12.8f" %M)
-    print(" HC = %12.8f" %HC)
-    print(" MS = %12.8f" %MS)
 
     assert(numpy.isclose(E,  -11.95991923))
     assert(numpy.isclose(M,   -0.00000000))
     assert(numpy.isclose(HC,   0.31925472))
     assert(numpy.isclose(MS,   0.01202961))
-    '''

@@ -23,9 +23,6 @@ requires-python = ">=3.8"
 #Changed to include project dependencies
 dependencies = [
     "numpy",
-    "matplotlib",
-    "sphinx",
-    "sphinx_rtd_theme",
     "setuptools",
     "networkx",
 ]

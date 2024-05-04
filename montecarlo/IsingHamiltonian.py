@@ -1,5 +1,4 @@
 import numpy as np
-import networkx as nx
 import math
 import montecarlo
 
@@ -59,12 +58,9 @@ class IsingHamiltonian:
 
         e = 0.0
         for i in range(config.N):
-            # print()
-            # print(i)
             for j in self.J[i]:
                 if j[0] < i:
                     continue
-                # print(j)
                 if config.config[i] == config.config[j[0]]:
                     e += j[1]
                 else:
@@ -73,39 +69,49 @@ class IsingHamiltonian:
         e += np.dot(self.mu, 2 * config.config - 1)
         return e
 
-    def compute_average_values(bs: montecarlo.BitString, G: nx.Graph, T: float):
-        #k = 1.38064852 * math.pow(10, -23)
-        k=1
-        beta = 1 / (k * T)
-        energy_and_mag_values = []
-        possible_configs = 2 ** len(bs)
-        Z = 0.0
+    def compute_average_values(self, T):
+        """Compute Average values exactly
 
-        # Compute energies and magnetizations for all configurations
-        for index in range(possible_configs):
-            bs.set_int_config(index)
-            en = montecarlo.energy(bs, G)
-            m = bs.on() - bs.off()
-            energy_and_mag_values.append((en, m))
-            Z += math.exp(-beta * en)
+        Parameters
+        ----------
+        T      : int
+            Temperature
 
-        # Calculate probabilities and average values
+        Returns
+        -------
+        E  : float
+            Energy
+        M  : float
+            Magnetization
+        HC : float
+            Heat Capacity
+        MS : float
+            Magnetic Susceptability
+        """
         E = 0.0
         M = 0.0
-        M_squared = 0.0
-        E_squared = 0.0
-        for energy_of_config, mag_of_config in energy_and_mag_values:
-            prob_of_config = math.exp(-beta * energy_of_config) / Z
-            weighted_energy = prob_of_config * energy_of_config
-            weighted_mag = prob_of_config * mag_of_config
-            M_squared += prob_of_config * mag_of_config**2
-            E_squared += prob_of_config * energy_of_config**2
-            E += weighted_energy
-            M += weighted_mag
+        Z = 0.0
+        EE = 0.0
+        MM = 0.0
 
-        # Additional calculations for heat capacity and magnetic susceptibility
-        HC = (1/T**2) * (E_squared - E**2)
-        MS = (1/T) * (M_squared - M**2)
+        conf = montecarlo.BitString(self.N)
 
+        for i in range(2 ** conf.N):
+            conf.set_int_config(i)
+            Ei = self.energy(conf)
+            Zi = np.exp(-Ei / T)
+            E += Ei * Zi
+            EE += Ei * Ei * Zi
+            Mi = np.sum(2 * conf.config - 1)
+            M += Mi * Zi
+            MM += Mi * Mi * Zi
+            Z += Zi
+
+        E = E / Z
+        M = M / Z
+        EE = EE / Z
+        MM = MM / Z
+
+        HC = (EE - E * E) / (T * T)
+        MS = (MM - M * M) / T
         return E, M, HC, MS
-    

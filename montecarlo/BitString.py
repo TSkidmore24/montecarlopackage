@@ -57,7 +57,7 @@ class BitString:
 
     def set_config(self, s:list):
         if len(s) > len(self.config):
-            print(len(s), len(self.config))
+            #print(len(s), len(self.config))
             raise IndexError(f"Error: new list of length {s.__len__()} is greater than bitstring length: {self.config.__len__()}.")
         temp = np.array(s)
         for index in temp:
