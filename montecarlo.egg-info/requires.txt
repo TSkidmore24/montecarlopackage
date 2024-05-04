@@ -1,3 +1,9 @@
+numpy
+matplotlib
+sphinx
+sphinx_rtd_theme
+setuptools
+networkx
 
 [test]
 pytest>=6.1.2

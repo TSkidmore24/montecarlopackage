@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: montecarlo
-Version: 0.0.0+0.g3f8b856.dirty
+Version: 1.0.0+28.g0e3faf4.dirty
 Summary: Ising ensemble
 Author-email: Tommy Skidmore <skidmore2024@vt.edu>
 License: MIT
@@ -9,6 +9,12 @@ Classifier: Programming Language :: Python :: 3
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: sphinx
+Requires-Dist: sphinx_rtd_theme
+Requires-Dist: setuptools
+Requires-Dist: networkx
 Provides-Extra: test
 Requires-Dist: pytest>=6.1.2; extra == "test"
 Requires-Dist: pytest-runner; extra == "test"
@@ -16,11 +22,16 @@ Requires-Dist: pytest-runner; extra == "test"
 montecarlo
 ==============================
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/branch/main/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/montecarlo/branch/main)
+[![GitHub Actions Build Status](https://github.com/TSkidmore24/montecarlopackage/workflows/CI/badge.svg)](https://github.com/TSkidmore24/montecarlopackage/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/TSkidmore24/montecarlopackage/branch/main/graph/badge.svg)](https://codecov.io/gh/TSkidmore24/montecarlopackage/branch/main)
+[![Documentation Status](https://readthedocs.org/projects/montecarlopackage-skidmore2024/badge/?version=latest)](https://montecarlopackage-skidmore2024.readthedocs.io/en/latest/?badge=latest)
+   
 
+See the documentation above! Use the following command to install the package into local enviroment, assuming you 
+are in the root directory of the package:
 
-Ising ensemble
+`pip install .`
+
 
 ### Copyright
 

@@ -27,6 +27,7 @@ dependencies = [
     "sphinx",
     "sphinx_rtd_theme",
     "setuptools",
+    "networkx",
 ]
 
 # Update the urls once the hosting is set up.

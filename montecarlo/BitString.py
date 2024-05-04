@@ -56,16 +56,16 @@ class BitString:
         return decimal_number
 
     def set_config(self, s:list):
-        try:
-            temp = np.array(s)
-            for index in temp:
-                #check if there are any values not 0 or 1
-                if index != 0 and index != 1:
-                    raise ValueError(f"Error: {index} must be 0 or 1.")
+        if len(s) > len(self.config):
+            print(len(s), len(self.config))
+            raise IndexError(f"Error: new list of length {s.__len__()} is greater than bitstring length: {self.config.__len__()}.")
+        temp = np.array(s)
+        for index in temp:
+            #check if there are any values not 0 or 1
+            if index != 0 and index != 1:
+                raise ValueError(f"Error: {index} must be 0 or 1.")
 
-            self.config = temp
-        except Exception as e:
-            raise ValueError(f"Error: set_config failed {e}")
+        self.config = temp
         
     def set_int_config(self, dec:int):
         #convert decimal to integer

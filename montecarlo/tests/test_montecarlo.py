@@ -11,6 +11,8 @@ import montecarlo
 
 import numpy
 
+import networkx as nx
+
 
 def test_montecarlo_imported():
     """Sample test, will always pass so long as import statement worked."""
@@ -56,11 +58,14 @@ def test_bitstring_int_on_off_flip():
         my_bs.flip_site(-1)
         my_bs.flip_site(-17)
         my_bs.flip_site(14)
-        #too large of array to map to bs dimensions
-        my_bs.set_config([0,1,1,0,0,1,0,0,1,0,1,0,1])
         #right dimension, incorrect value 
-        my_bs.set_config([0,2,1,0,0,1,0,0,1,0,1,0])
+        my_bs.set_config([0,2,1,0,0,1,0,0,1,0,1,0,1])
         my_bs.set_config([0,0,1,0,-1,1,0,0,1,0,1,0])
+
+    with pytest.raises(IndexError):
+         #desired bitstring is greater in dimension than bitstring
+         my_bs.set_config([0,1,1,0,0,1,0,0,1,0,1,0,1,1])
+
     #forcibly change bitstring to include a value not 0 or 1
     my_bs.config[0] = 2
     with pytest.raises(ValueError):
@@ -95,3 +100,34 @@ def test_bitstring_int_config_repr():
     assert my_bs == my_bs2
 
     assert my_bs.__repr__() == '[0 0 0 0]'
+'''
+def test_Ising():
+    N = 6
+    Jval = 2.0
+    G = nx.Graph()
+    G.add_nodes_from([i for i in range(N)])
+    G.add_edges_from([(i,(i+1)% G.number_of_nodes() ) for i in range(N)])
+    for e in G.edges:
+        G.edges[e]['weight'] = Jval
+
+    conf = montecarlo.BitString(N)
+    #12 possible bitstring configurations for 3 bit
+    #assert 2*len(conf) == 12
+
+
+    ham = montecarlo.IsingHamiltonian(G)
+
+    # Compute the average values for Temperature = 1
+    E, M, HC, MS = ham.compute_average_values(1)
+
+
+    print(" E  = %12.8f" %E)
+    print(" M  = %12.8f" %M)
+    print(" HC = %12.8f" %HC)
+    print(" MS = %12.8f" %MS)
+
+    assert(numpy.isclose(E,  -11.95991923))
+    assert(numpy.isclose(M,   -0.00000000))
+    assert(numpy.isclose(HC,   0.31925472))
+    assert(numpy.isclose(MS,   0.01202961))
+    '''
