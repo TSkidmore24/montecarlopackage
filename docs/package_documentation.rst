@@ -69,11 +69,10 @@ For a graph, defined by a set of edges and vertices, we want to represent an Isi
 
 Given a configuration of spins, we can define the energy using what is referred to as an Ising Hamiltonian:
 
-.. math::
+H = sum(J(ij)s(i)s(j))
 
-    \\hat{H} = \\sum_{(i,j)\\in E} J_{ij} s_i s_j
-
-where, $s_i=1$ if the $i^{th}$ spin is 'up' and $s_i=-1$ if it is 'down', and the summation runs over all edges in the graph.
+The Hamiltonian is a sum over all edges in the graph, with J(ij) representing the edge weights associated with each spin interaction.
+s(i) takes a value of 1 if the spin is 'up' and -1 if it is 'down'.
 
 **Note:** As we saw before, this Hamiltonian operator is simple, in that a single `BitString` returns a single energy.
 
