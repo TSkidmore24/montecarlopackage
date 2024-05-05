@@ -65,17 +65,12 @@ Ising Hamiltonian Class
 
 The `IsingHamiltonian` class defines an Ising Hamiltonian. 
 
-For a graph, $G = (E,V)$, defined by a set of edges, $E$, and vertices, $V$, we want to represent an Ising model, where the edge weights, $w_{ij}$ are given by the spin interactions, i.e., $w_{ij} = J_{ij}$.
-
-Given a configuration of spins (e.g., $\\uparrow\\downarrow\\downarrow\\uparrow\\downarrow$) we can define the energy using what is referred to as an Ising Hamiltonian:
-
-.. math::
-
-    \\hat{H} = \\sum_{(i,j)\\in E}J_{ij} s_is_j + \\sum_i \\mu_i s_i.
-
-where, $s_i=1$ if the $i^{th}$ spin is 'up' and $s_i=-1$ if it is 'down', and the summation runs over all edges in the graph.
-
-**Note:** As we saw before, this Hamiltonian operator is simple, in that a single `BitString` returns a single energy. 
+"For a graph, $G = (E,V)$, defined by a set of edges, $E$, and vertices, $V$, we want to represent an Ising model, where the edge weights, $w_{ij}$ are given by the spin interactions, i.e., $w_{ij} = J_{ij}$.\n",
+"\n",
+"Given a configuration of spins (e.g., $\\uparrow\\downarrow\\downarrow\\uparrow\\downarrow$) we can define the energy using what is referred to as an Ising Hamiltonian:\n",
+"$$ \\hat{H} = \\sum_{(i,j)\\in E}J_{ij} s_is_j$$\n",
+"where, $s_i=1$ if the $i^{th}$ spin is `up` and $s_i=-1$ if it is `down`, and the sumation runs over all edges in the graph. \n",
+"**Note:** As we saw before, this Hamiltonian operator is simple, in that a single `BitString` returns a single energy."
 
 
 .. autoclass:: IsingHamiltonian

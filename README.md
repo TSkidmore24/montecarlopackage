@@ -6,10 +6,7 @@ montecarlo
 [![Documentation Status](https://readthedocs.org/projects/montecarlopackage-skidmore2024/badge/?version=latest)](https://montecarlopackage-skidmore2024.readthedocs.io/en/latest/?badge=latest)
    
 
-See the documentation above! Use the following command to install the package into local enviroment, assuming you 
-are in the root directory of the package:
-
-`pip install .`
+Click on the documentation badge above for information on purpose, installation and methods with the montecarlo package. 
 
 
 ### Copyright
