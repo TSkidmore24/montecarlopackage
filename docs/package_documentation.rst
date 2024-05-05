@@ -1,23 +1,61 @@
 Package Documentation
-=================
+=====================
 
-BitString class uses a numpy array to store a bitstring, a 1 dimensional array containing only 1s and 0s. This class contains
-numerous methods:
+BitString Class
+---------------
 
-''__repr__:'' Converts the bitstring into a string data type.
+The `BitString` class uses a numpy array to store a bitstring, which is a 1-dimensional array containing only 1s and 0s.
 
-''__eq__:'' Comparison operator for bitstring objects. 
+.. autoclass:: BitString
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :noindex:
 
-''__len__'' Returns the length of entrys in numpy array.
+Method Details
+--------------
 
-''on(self)'' Returns the number of 1s in numpy array.
+__repr__
+^^^^^^^^
 
-''off(self)'' Returns the number of 0s in numpy array.
+Converts the bitstring into a string data type.
 
-''flip_site(self, i)'' Flips the value of the array at a specific index. 
+__eq__
+^^^^^^
 
-''int(self)'' Converts the binary representation of the bitstring into equivalent decimal value.
+Comparison operator for bitstring objects.
 
-''set_int_config(self, s)'' Directly set the value of the bitstring (numpy array) by providing a decimal integer.
+__len__
+^^^^^^^
 
-''set_config(self, s)'' Directly set the value of the bitstring (numpy array) by providing a string of 0s and 1s.
+Returns the length of entries in the numpy array.
+
+on()
+^^^
+
+Returns the number of 1s in the numpy array.
+
+off()
+^^^^
+
+Returns the number of 0s in the numpy array.
+
+flip_site(i)
+^^^^^^^^^^^^
+
+Flips the value of the array at a specific index.
+
+int()
+^^^^
+
+Converts the binary representation of the bitstring into the equivalent decimal value.
+
+set_int_config(s)
+^^^^^^^^^^^^^^^^
+
+Directly sets the value of the bitstring (numpy array) by providing a decimal integer.
+
+set_config(s)
+^^^^^^^^^^^^^
+
+Directly sets the value of the bitstring (numpy array) by providing a string of 0s and 1s.
