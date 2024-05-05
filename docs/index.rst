@@ -4,13 +4,28 @@
    contain the root `toctree` directive.
 
 Welcome to montecarlo's documentation!
-======================================
+=========================================================
 
-This montecarlo package was created for Quantum Software I (CHEM 3684). Check out my documentation below!
+This montecarlo package was created for Quantum Software I (CHEM 3684). 
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
+The purpose of this python package is to enable users to compute thermodynamic averages
+using an Ising Hamiltonian. This Ising Model contains a graph, which consists of edges 
+and vertices. Each vertice represents a spin of a particle, and each edge represents 
+an interaction between the particles. Each edge has a corresponding weight. Using this 
+model, the Ising Hamiltonian can be used to compute various thermodynamic averages 
+including magnetization, energy, heat capacity and magnetic susceptibility. 
 
-   montecarlo
+Check out my documentation below!
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   getting_started_with_montecarlo_package
+   package_documentation
+
+Index
+=====
+
+* :ref:`genindex`
+* :class:`BitString`
