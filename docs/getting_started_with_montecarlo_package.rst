@@ -1,4 +1,4 @@
-Getting Started
+Getting Started with Montecarlo Package
 ===============
 
 This page details how to get started with montecarlo. 

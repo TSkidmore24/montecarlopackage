@@ -172,3 +172,6 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+extensions = [
+    'sphinx.ext.autosummary',
+]
