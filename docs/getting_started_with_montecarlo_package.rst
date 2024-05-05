@@ -10,7 +10,12 @@ an interaction between the particles. Each edge has a corresponding weight. Usin
 model, the Ising Hamiltonian can be used to compute various thermodynamic averages 
 including magnetization, energy, heat capacity and magnetic susceptibility. 
 
-Note that various packages need to be installed, which are listed in requirements.txt. 
-Use the following command to install the dependencies within your virtual environment:
+Note that various additional packages need to be installed, including:
 
-pip install -r requirements.txt
+numpy
+matplotlib
+networkx
+
+These dependencies are listed in the directory docs/requirements.txt:
+
+pip install -r docs/requirements.txt
