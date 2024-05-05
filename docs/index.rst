@@ -10,8 +10,8 @@ Welcome to montecarlo's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   getting_started
-   api
+   getting_started_with_montecarlo_package
+   package_documentation
 
 
 Indices and tables
