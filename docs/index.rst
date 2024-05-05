@@ -4,19 +4,13 @@
    contain the root `toctree` directive.
 
 Welcome to montecarlo's documentation!
-=========================================================
+======================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+This montecarlo package was created for Quantum Software I (CHEM 3684). Check out my documentation below!
 
-   getting_started_with_montecarlo_package
-   package_documentation
+.. autosummary::
+   :toctree: _autosummary
+   :template: custom-module-template.rst
+   :recursive:
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   montecarlo

@@ -172,6 +172,8 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
-extensions = [
-    'sphinx.ext.autosummary',
+xtensions = [
+    'sphinx.ext.autodoc',  # Core library for html generation from docstrings
+    'sphinx.ext.autosummary',  # Create neat summary tables
 ]
+autosummary_generate = True  # Turn on sphinx.ext.autosummary
