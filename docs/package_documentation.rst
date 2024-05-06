@@ -103,3 +103,8 @@ compute_average_values(bitstring, graph, temperature)
 
 Computes the average energy, magnetization, heat capacity, and mangetic susceptibility for the Ising graph. 
 
+get_lowest_energy_config(self)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Computers the lowest energy configuration for a length of bitstring.
+

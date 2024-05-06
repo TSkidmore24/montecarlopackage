@@ -115,3 +115,29 @@ class IsingHamiltonian:
         HC = (EE - E * E) / (T * T)
         MS = (MM - M * M) / T
         return E, M, HC, MS
+    
+    def get_lowest_energy_config(self):
+
+        x = [] # Store list of indices
+        y = [] # Store list of energies
+        xmin = None # configuration of minimum energy configuration
+        emin = float('inf') # changed to allow algorithm to find the lowest energy by initially comparing it to largest amount
+        my_bs = montecarlo.BitString(self.N)
+
+        #iterate over all possible combinations of the bitstring, 2^n possibilities, where n is length of bitstring
+        for index in range(2**len(my_bs)):
+            my_bs.set_int_config(index)
+            
+            # Compute energy for this configuration
+            en = self.energy(my_bs)
+            
+            # Update minimum energy and bitstring if it is the smallest energy found so far
+            if en < emin:
+                emin = en
+                xmin = index
+                
+            #Append appropriate values
+            x.append(index)
+            y.append(en)
+
+        return emin, xmin

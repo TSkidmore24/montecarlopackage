@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: montecarlo
-Version: 1.0.0+28.g0e3faf4.dirty
+Version: 1.0.0+40.g71c8a59.dirty
 Summary: Ising ensemble
 Author-email: Tommy Skidmore <skidmore2024@vt.edu>
 License: MIT
@@ -10,9 +10,6 @@ Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: numpy
-Requires-Dist: matplotlib
-Requires-Dist: sphinx
-Requires-Dist: sphinx_rtd_theme
 Requires-Dist: setuptools
 Requires-Dist: networkx
 Provides-Extra: test
@@ -27,10 +24,7 @@ montecarlo
 [![Documentation Status](https://readthedocs.org/projects/montecarlopackage-skidmore2024/badge/?version=latest)](https://montecarlopackage-skidmore2024.readthedocs.io/en/latest/?badge=latest)
    
 
-See the documentation above! Use the following command to install the package into local enviroment, assuming you 
-are in the root directory of the package:
-
-`pip install .`
+Click on the documentation badge above for information on purpose, installation and methods with the montecarlo package. 
 
 
 ### Copyright

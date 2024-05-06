@@ -24,8 +24,8 @@ Check out my documentation below!
    getting_started_with_montecarlo_package
    package_documentation
 
-Index
-=====
+Classes
+=======
 
-* :ref:`genindex`
 * :class:`BitString`
+* :class:`IsingHamiltonian`
