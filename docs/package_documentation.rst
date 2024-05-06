@@ -106,5 +106,5 @@ Computes the average energy, magnetization, heat capacity, and mangetic suscepti
 get_lowest_energy_config(self)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Computers the lowest energy configuration for a length of bitstring.
+Computes the lowest energy configuration for a length of bitstring.
 

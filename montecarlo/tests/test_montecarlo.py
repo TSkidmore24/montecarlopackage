@@ -125,3 +125,8 @@ def test_Ising():
     assert(numpy.isclose(M,   -0.00000000))
     assert(numpy.isclose(HC,   0.31925472))
     assert(numpy.isclose(MS,   0.01202961))
+
+    xmin, cmin = ham.get_lowest_energy_config()
+    assert(numpy.isclose(xmin,  -12))
+    #21 is 010101
+    assert(cmin == 21)

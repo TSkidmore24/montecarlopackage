@@ -6,24 +6,22 @@ This page details how to get started with Montecarlo.
 Installing Dependencies
 -----------------------
 
-Before using Montecarlo, you need to install the package. You will need to install python to use this package.
+Before using Montecarlo, you need to install the package. You will need to install Python to use this package.
 
-Assuming you have python installed, I recommend using virtual environments to manage your python packages. See the following tutorial:
+Assuming you have Python installed (and pip), I recommend using virtual environments to manage your Python packages. See the following tutorial:
 
-https://docs.python.org/3/library/venv.html
+https://docs.Python.org/3/library/venv.html
 
-Download the contents of the repoisitory.
+Download the contents of the repository.
 
-Next, make sure that you are on the package home directory and install the package in your python environment using:
+Next, make sure that you are on the package home directory and install the package in your Python environment using:
 
 pip install .
 
-These dependencies should be installed automatically when installing the package.
+Next, these dependencies will need to be manually installed from the ''requirements.txt`` file located within the docs folder. 
+You can install them in your Python environment using the following command (assuming you are in docs directory)::
 
-If needed, these dependencies can be manually installed from the ``docs/requirements.txt`` file. You can install them in your Python 
-environment using the following command::
-
-    pip install -r docs/requirements.txt
+    pip install -r requirements.txt
 
 The required dependencies are:
 
